@@ -44,7 +44,7 @@ Type the commands below to generate both CA certificates+keys and Server certifi
 openssl req -x509 -newkey rsa:2048 -out myAwesomeCA.cer -outform PEM -keyout myAwesomeCA.pvk -days 10000 -verbose -config myAwesomeCA.cnf -nodes -sha256 -subj "/CN=57.129.53.74"
 ```
 ```bash
-openssl req -newkey rsa:2048 -keyout myAwesomeServer.pvk -out myAwesomeServer.req -subj /CN=localhost -sha256 -nodes
+openssl req -newkey rsa:2048 -keyout myAwesomeServer.pvk -out myAwesomeServer.req -subj /CN=57.129.53.74 -sha256 -nodes
 ```
 ```bash
 openssl x509 -req -CA myAwesomeCA.cer -CAkey myAwesomeCA.pvk -in myAwesomeServer.req -out myAwesomeServer.cer -days 10000 -extfile myAwesomeServer.ext -sha256 -set_serial 0x1111
@@ -58,7 +58,7 @@ Content sample withs certificate :
 ```bash
 server {
     listen 8443 ssl; # add "ssl" here
-    server_name _;
+    server_name 57.129.53.74;
         ssl_certificate /root/certs/myAwesomeCA.cer; # Certificate
         ssl_certificate_key /root/certs/myAwesomeCA.pvk; # Certificate key
 

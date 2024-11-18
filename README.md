@@ -33,7 +33,7 @@ sudo vim myAwesomeServer.ext
 ```
 Paste : 
 ```bash
-subjectAltName = @alt_names
+subjectAltName = 57.129.53.74
 extendedKeyUsage = serverAuth
 
 [alt_names]

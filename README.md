@@ -1,7 +1,7 @@
 # https-ipaddress
 How to secure a private IP address with HTTPS (Linux)
 ## Creating the Keys and Certificates
-Create a configuration file myAwesomeCA.cnf for Certificate Authority (CA certificate) and pass in the information about your organisation.
+Create a configuration file openssl-v3-san.cnf and pass in the information about your organisation.
 ```bash
 sudo vim openssl-v3-san.cnf
 ```
